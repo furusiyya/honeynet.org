@@ -7,14 +7,47 @@ mentor: "Muhammad Bilal Arif"
 project_type: "Improving an existing tool"
 ---
 
+Glutton is a powerful Generic Low Interaction Honeypot designed to emulate various network services and capture malicious activity for security analysis. Its strength lies in its generic nature, supporting a wide range of network protocols.
 
-Glutton is a powerful **Generic Low Interaction Honeypot** designed to emulate various network services and capture malicious activity for security analysis. Its strength lies in its generic nature, supporting a wide range of network protocols.
 
-The goal of this project is to:
 
-* Develop a Go wrapper to integrate [Spicy](https://github.com/zeek/spicy) with Glutton.
-* Implement protocol parsers for HTTP and DNS as initial examples.
-* Provide documentation to explain the implementation.
+Goal of this project is to:
 
-The primary required skill is proficiency in Go programming and familiarity with Linux networking.  
-An understanding of network monitoring tools like Spicy or similar is a nice-to-have skill.
+1. Create Spicy-based parsers that replicate the functionality of Glutton's existing parsers:
+   - First implement an HTTP parser equivalent to the [current Go implementation](https://github.com/mushorg/glutton/blob/main/protocols/tcp/http.go)
+   - Then implement a DNS parser following the same approach
+
+2. **For each protocol parser:**
+   - Write Spicy scripts that match the behavior of the existing Go parsers for HTTP and DNS
+   - Generate parser code from the Spicy source and build an executable file 
+   - Run executable and send test data streams to ensure its behavior matches Glutton parsers.
+
+Document the implementation, testing methodology, and results as deliverables.
+
+## Required Skills
+
+- Proficiency in C++ programming
+- Familiarity with Go programming language
+- Understanding of Linux networking concepts
+- Knowledge of HTTP and DNS protocols (or willingness to learn)
+
+## Learning Opportunities
+
+- Deep understanding of network protocol implementation
+- Experience with parser development using modern tools
+- Practical application of network security concepts
+- Contribution to an active open-source security tool
+
+## Interested Students Should:
+
+1. Clone the [Glutton repository](https://github.com/mushorg/glutton)
+2. Familiarize yourself with the [existing parsers](https://github.com/mushorg/glutton/tree/main/protocols)
+3. Set up a [Spicy development environment](https://docs.zeek.org/projects/spicy/en/latest/installation.html)
+4. Customize something in this example and submit as part of your proposal.
+
+## Resources
+
+- [Glutton GitHub Repository](https://github.com/mushorg/glutton)
+- [Spicy Documentation](https://docs.zeek.org/projects/spicy/en/latest/)
+- [HTTP Protocol Specification](https://tools.ietf.org/html/rfc7230)
+- [DNS Protocol Specification](https://tools.ietf.org/html/rfc1035)
